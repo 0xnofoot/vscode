@@ -6,7 +6,7 @@
             "type": "lldb",
             "request": "launch",
             "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
-            "iosBundleId": "${xcodeBundleId}",
+            "iosBundleId": "${#xcodeBundleId}",
             "iosTarget": "last-selected",
             "preLaunchTask": "${defaultBuildTask}"
         },
@@ -15,7 +15,7 @@
             "type": "lldb",
             "request": "launch",
             "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
-            "iosBundleId": "${xcodeBundleId}",
+            "iosBundleId": "${#xcodeBundleId}",
             "iosTarget": "last-selected"
         },
         {
@@ -23,7 +23,7 @@
             "type": "lldb",
             "request": "launch",
             "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
-            "iosBundleId": "${xcodeBundleId}",
+            "iosBundleId": "${#xcodeBundleId}",
             "iosTarget": "last-selected",
             "iosInstallApp": false
         },
@@ -32,7 +32,7 @@
             "type": "lldb",
             "request": "attach",
             "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
-            "iosBundleId": "${xcodeBundleId}",
+            "iosBundleId": "${#xcodeBundleId}",
             "iosTarget": "last-selected"
         }
     ]

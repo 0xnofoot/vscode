@@ -1,9 +1,23 @@
 {
   //---------- Custom ----------//
   "terminal.external.osxExec": "kitty.app",
+  "files.autoGuessEncoding": true,
+  //---------- Workbench ----------//
+  "workbench.colorTheme": "Syntax Material Dark",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  //---------- Window ----------//
+  "window.dialogStyle": "custom",
+  "window.restoreWindows": "all",
   //---------- Editor ----------//
   "editor.fontFamily": "FiraMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontSize": 13,
+  "editor.cursorBlinking": "smooth",
+  "editor.mouseWheelZoom": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
+  "editor.guides.bracketPairs": false,
   "editor.cursorSurroundingLines": 10,
   "editor.cursorSurroundingLinesStyle": "all",
   "editor.find.addExtraSpaceOnTop": false,
@@ -13,9 +27,25 @@
   "editor.wordWrap": "on",
   "editor.lineNumbers": "relative",
   "editor.stickyScroll.enabled": false,
+  "editor.suggest.showStatusBar": true,
+  "editor.suggest.snippetsPreventQuickSuggestions": true,
+  "editor.suggestSelection": "recentlyUsed",
+  //---------- Indent ----------//
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.colors": [
+    "rgba(255,255,64,0.3)",
+    "rgba(127,255,127,0.3)",
+    "rgba(255,127,255,0.3)",
+    "rgba(79,236,236,0.3)"
+  ],
+  //---------- Git ----------//
+  "gitlens.currentLine.enabled": false,
+  "gitlens.codeLens.enabled": false,
   //---------- Vim ----------//
-  // 禁用leader键，所有space开头的快捷键必须交给vscode处理
-  // "vim.leader": " ",
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.searchHighlightColor": "rgba(150, 150, 150, 0.4)",
   "vim.useSystemClipboard": true,
   "vim.enableNeovim": false,
   "vim.smartRelativeLine": true,
@@ -25,6 +55,7 @@
   "vim.handleKeys": {},
   "vim.insertModeKeyBindings": [],
   "vim.normalModeKeyBindingsNonRecursive": [
+    // 光标移动
     {
       "before": [
         "J"
@@ -57,23 +88,6 @@
       ],
       "after": [
         "<C-u>"
-      ]
-    },
-    {
-      "before": [
-        "<C-S-j>"
-      ],
-      "after": [
-        "G"
-      ]
-    },
-    {
-      "before": [
-        "<C-S-k>"
-      ],
-      "after": [
-        "g",
-        "g"
       ]
     },
     {
@@ -121,6 +135,7 @@
         "b"
       ]
     },
+    // 窗口操作
     {
       "before": [
         "z",
@@ -155,6 +170,42 @@
       ],
       "commands": [
         "workbench.action.splitEditorRight"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.focusBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.focusRightGroup"
       ]
     },
     {
@@ -207,22 +258,56 @@
         "workbench.action.files.newUntitledFile"
       ]
     },
+    // 搜索
     {
       "before": [
-        "<C-h>"
+        "leader",
+        "f"
       ],
       "commands": [
-        "workbench.action.previousEditor"
+        "leap.find"
       ]
     },
     {
       "before": [
-        "<C-l>"
+        "leader",
+        "e",
+        "f"
       ],
       "commands": [
-        "workbench.action.nextEditor"
+        "workbench.action.quickOpen"
       ]
     },
+    {
+      "before": [
+        "leader",
+        "<enter>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "v",
+        "h"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    // 代码格式化
+    {
+      "before": [
+        "leader",
+        "g",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    // 文本编辑
     {
       "before": [
         ";"
@@ -377,10 +462,9 @@
         "Y"
       ],
       "after": [
-        "\"",
-        "+",
-        "y",
-        "$"
+        "v",
+        "$",
+        "y"
       ]
     },
     {
@@ -391,6 +475,23 @@
         "<C-r>"
       ]
     },
+    {
+      "before": [
+        "<enter>"
+      ],
+      "commands": [
+        "editor.action.smartSelect.expand"
+      ]
+    },
+    {
+      "before": [
+        "<backspace>"
+      ],
+      "commands": [
+        "editor.action.smartSelect.shrink"
+      ]
+    },
+    // 代码提示
     {
       "before": [
         "g",
@@ -481,16 +582,39 @@
         "workbench.actions.view.problems"
       ]
     },
+    // 文件资源管理器
     {
       "before": [
-        "<C-c>"
+        "leader",
+        "w"
       ],
       "commands": [
-        ":nohl"
+        "workbench.view.explorer"
+      ]
+    },
+    //---------- 引用 ----------//
+    {
+      "before": [
+        "leader",
+        "r"
       ],
+      "commands": [
+        "workbench.view.extension.references-view",
+      ]
+    },
+    //---------- 书签 ----------//
+    {
+      "before": [
+        "leader",
+        "m"
+      ],
+      "commands": [
+        "bookmarksExplorer.focus",
+      ]
     },
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
+    // 光标移动
     {
       "before": [
         "J"
@@ -523,23 +647,6 @@
       ],
       "after": [
         "<C-u>"
-      ]
-    },
-    {
-      "before": [
-        "<C-S-j>"
-      ],
-      "after": [
-        "G"
-      ]
-    },
-    {
-      "before": [
-        "<C-S-k>"
-      ],
-      "after": [
-        "g",
-        "g"
       ]
     },
     {
@@ -587,17 +694,65 @@
         "b"
       ]
     },
+    // 代码格式化
+    {
+      "before": [
+        "leader",
+        "g",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatSelection"
+      ]
+    },
+    //文本编辑
+    {
+      "before": [
+        "<enter>"
+      ],
+      "commands": [
+        "editor.action.smartSelect.expand"
+      ]
+    },
+    {
+      "before": [
+        "<backspace>"
+      ],
+      "commands": [
+        "editor.action.smartSelect.shrink"
+      ]
+    }
   ],
-  //---------- Dart & Flutter ----------//
-  "dart.flutterSdkPath": "~/fvm/default",
+  //---------- Flutter & Dart ----------//
   "dart.lineLength": 100,
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
   "dart.debugExternalPackageLibraries": true,
   "dart.debugSdkLibraries": true,
   "dart.openDevTools": "flutter",
   "dart.flutterCreateOrganization": null,
+  //---------- Swift ----------//
+  "[swift]": {
+    "editor.defaultFormatter": "vknabel.vscode-swiftformat",
+    "editor.inlayHints.enabled": "offUnlessPressed"
+  },
+  "swiftlint.enable": false,
+  "swiftlint.onlyEnableWithConfig": true,
+  "swiftlint.configSearchPaths": [
+    "~/.config/vscode/language/swift/swiftlint.yml",
+    ".swiftlint.yml"
+  ],
+  "swiftformat.configSearchPaths": [
+    "~/.config/vscode/language/swift/swiftformat.config",
+    ".swiftformat"
+  ],
+  "[objective-c]": {
+    "editor.defaultFormatter": "nofoot.clang-format-support-style-variable",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+  },
+  //---------- Objective-C ----------//
+  "clang-format.language.objective-c.style": "file:${env.HOME}/.config/vscode/language/objective-c/clang-format.config",
+  //---------- LLDB ----------//
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "lldb.launch.expressions": "native",
   //---------- End ----------//
-  //---------- System Add ----------//
 }

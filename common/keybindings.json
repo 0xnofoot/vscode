@@ -1,5 +1,25 @@
 // 将键绑定放在此文件中以覆盖默认值
 [
+  //---------- 编辑操作 ----------//
+  {
+    "key": "alt+enter",
+    "command": "workbench.action.focusLastEditorGroup"
+  },
+  {
+    "key": "alt+enter",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "textInputFocus && inlineSuggestionVisible"
+  },
+  {
+    "key": "ctrl+p",
+    "command": "clipboard-manager.editor.pickAndPaste",
+    "when": "textInputFocus"
+  },
+  {
+    "key": "ctrl+tab",
+    "command": "toggleSuggestionDetails",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
   //---------- 选项操作 ----------//
   {
     "key": "tab",
@@ -8,6 +28,11 @@
   },
   {
     "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "alt+tab",
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
@@ -22,12 +47,22 @@
     "when": "codeActionMenuVisible"
   },
   {
+    "key": "alt+tab",
+    "command": "selectPrevCodeAction",
+    "when": "codeActionMenuVisible"
+  },
+  {
     "key": "tab",
     "command": "selectNextQuickFix",
     "when": "quickFixWidgetVisible"
   },
   {
     "key": "shift+tab",
+    "command": "selectPrevQuickFix",
+    "when": "quickFixWidgetVisible"
+  },
+  {
+    "key": "alt+tab",
     "command": "selectPrevQuickFix",
     "when": "quickFixWidgetVisible"
   },
@@ -42,6 +77,11 @@
     "when": "snippetWidgetVisible"
   },
   {
+    "key": "alt+tab",
+    "command": "selectPrevSuggestion",
+    "when": "snippetWidgetVisible"
+  },
+  {
     "key": "tab",
     "command": "workbench.action.quickOpenSelectNext",
     "when": "inQuickOpen"
@@ -50,7 +90,7 @@
     // "key": "shift+tab", 不起作用，无法解决
     "key": "alt+tab",
     "command": "workbench.action.quickOpenSelectPrevious",
-    "when": "inQuickOpen",
+    "when": "inQuickOpen"
   },
   {
     "key": "tab",
@@ -80,24 +120,14 @@
   },
   //---------- 窗口操作 ----------//
   {
-    "key": "space k",
-    "command": "workbench.action.focusAboveGroup",
-    "when": "editorTextFocus && vim.mode!='Insert'"
+    "key": "ctrl+h",
+    "command": "workbench.action.previousEditor",
+    "when": "editorTextFocus"
   },
   {
-    "key": "space j",
-    "command": "workbench.action.focusBelowGroup",
-    "when": "editorTextFocus && vim.mode!='Insert'"
-  },
-  {
-    "key": "space h",
-    "command": "workbench.action.focusLeftGroup",
-    "when": "editorTextFocus && vim.mode!='Insert'"
-  },
-  {
-    "key": "space l",
-    "command": "workbench.action.focusRightGroup",
-    "when": "editorTextFocus && vim.mode!='Insert'"
+    "key": "ctrl+l",
+    "command": "workbench.action.nextEditor",
+    "when": "editorTextFocus"
   },
   {
     "key": "ctrl+shift+h",
@@ -110,6 +140,61 @@
     "when": "editorTextFocus"
   },
   {
+    "key": "alt+j",
+    "command": "workbench.action.focusBelowGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.focusAboveGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.focusLeftGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.focusRightGroup",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+j",
+    "command": "workbench.action.splitEditorDown",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+k",
+    "command": "workbench.action.splitEditorUp",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+h",
+    "command": "workbench.action.splitEditorLeft",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+l",
+    "command": "workbench.action.splitEditorRight",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "panelFocus"
+  },
+  {
+    "key": "alt+l",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "auxiliaryBarFocus"
+  },
+  {
     "key": "ctrl+alt+shift+h",
     "command": "workbench.action.moveEditorToLeftGroup",
     "when": "editorTextFocus"
@@ -120,39 +205,33 @@
     "when": "editorTextFocus"
   },
   {
-    "key": "ctrl+w",
-    "command": "editor.action.showHover",
+    "key": "ctrl+alt+shift+j",
+    "command": "workbench.action.moveEditorToBelowGroup",
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+j",
-    "command": "workbench.action.focusPanel",
+    "key": "ctrl+alt+shift+k",
+    "command": "workbench.action.moveEditorToAboveGroup",
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+k",
-    "command": "workbench.action.focusActiveEditorGroup",
+    "key": "alt+h",
+    "command": "workbench.action.previousPanelView",
     "when": "panelFocus"
   },
   {
-    "key": "alt+h",
-    "command": "workbench.action.focusSideBar",
-    "when": "editorTextFocus"
-  },
-  {
     "key": "alt+l",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "sideBarFocus"
+    "command": "workbench.action.nextPanelView",
+    "when": "panelFocus"
   },
   {
-    "key": "alt+l",
-    "command": "workbench.action.focusAuxiliaryBar",
+    "key": "alt+z",
+    "command": "workbench.action.focusPanel",
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "workbench.action.closeActiveEditor",
     "when": "editorTextFocus"
-  },
-  {
-    "key": "alt+h",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "auxiliaryBarFocus"
   },
   {
     "key": "alt+shift+q",
@@ -169,57 +248,24 @@
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "auxiliaryBarFocus"
   },
-  {
-    "key": "ctrl+shift+h",
-    "command": "workbench.action.navigateLeft",
-    "when": "panelFocus"
-  },
-  {
-    "key": "ctrl+shift+l",
-    "command": "workbench.action.navigateRight",
-    "when": "panelFocus"
-  },
   //---------- 搜索与指令 ----------//
   {
-    "key": "space f",
-    "command": "leap.find",
-    "when": "editorTextFocus && vim.mode!='Insert'"
-  },
-  {
-    "key": "space e f",
-    "command": "workbench.action.quickOpen",
-    "when": "editorTextFocus && vim.mode!='Insert'"
-  },
-  {
     "key": "ctrl+f",
-    "command": "workbench.action.showAllSymbols",
+    "command": "workbench.action.showAllSymbols"
+  },
+  {
+    "key": "ctrl+shift+f",
+    "command": "workbench.action.quickOpen"
   },
   {
     "key": "ctrl+;",
-    "command": "workbench.action.showCommands",
-  },
-  //---------- 格式化代码 ----------//
-  {
-    "key": "space g f",
-    "command": "editor.action.formatDocument",
-    "when": "editorTextFocus && vim.mode!='Insert'"
-  },
-  //---------- 代码块选中 ----------//
-  {
-    "key": "enter",
-    "command": "editor.action.smartSelect.expand",
-    "when": "editorTextFocus && vim.mode!='Insert' && !vim.active"
-  },
-  {
-    "key": "backspace",
-    "command": "editor.action.smartSelect.shrink",
-    "when": "editorTextFocus && vim.mode!='Insert' && !vim.active"
+    "command": "workbench.action.showCommands"
   },
   //---------- 运行和调试 ----------//
   {
     "key": "ctrl+b",
     "command": "editor.debug.action.toggleBreakpoint",
-    "when": "editorTextFocus && vim.mode=='Normal"
+    "when": "editorTextFocus"
   },
   {
     "key": "cmd+r",
@@ -231,21 +277,82 @@
     "command": "workbench.action.debug.start",
     "when": "!inDebugMode"
   },
+  //---------- 书签 ----------//
+  {
+    "key": "ctrl+m",
+    "command": "bookmarks.toggle"
+  },
+  {
+    "key": "ctrl+shift+m",
+    "command": "bookmarks.list"
+  },
+  {
+    "key": "alt+m",
+    "command": "bookmarksExplorer.focus"
+  },
+  {
+    "key": "ctrl+alt+shift+m",
+    "command": "bookmarks.clear"
+  },
+  //---------- 终端 ----------//
+  {
+    "key": "alt+shift+z",
+    "command": "workbench.action.quickOpenTerm"
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "workbench.action.closePanel",
+    "when": "terminalFocus"
+  },
+  //---------- 侧边栏 ----------//
+  {
+    "key": "alt+w",
+    "command": "workbench.action.focusSideBar",
+  },
+  {
+    "key": "alt+shift+q",
+    "command": "workbench.action.closeSidebar",
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "escape",
+    "command": "workbench.action.focusActiveEditorGroup",
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "shift+j",
+    "command": "list.focusDown",
+    "args": 5,
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "shift+k",
+    "command": "list.focusUp",
+    "args": 5,
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "args": 20,
+    "when": "sideBarFocus && !inputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "args": 20,
+    "when": "sideBarFocus && !inputFocus"
+  },
   //---------- 侧边资源管理器 ----------//
   {
     "key": "space w",
-    "command": "workbench.view.explorer",
-    "when": "editorTextFocus && !filesExplorerFocus && vim.mode!='Insert'"
-  },
-  {
-    "key": "space w",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "filesExplorerFocus && vim.mode!='Insert'"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "space l",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "filesExplorerFocus && vim.mode!='Insert'"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   {
     "key": "q",
@@ -255,23 +362,6 @@
   {
     "key": "shift+q",
     "command": "workbench.action.toggleSidebarVisibility",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "escape",
-    "command": "workbench.action.focusActiveEditorGroup",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+j",
-    "command": "list.focusDown",
-    "args": 5,
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "shift+k",
-    "command": "list.focusUp",
-    "args": 5,
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
@@ -474,4 +564,103 @@
     "command": "-editor.showSupertypes",
     "when": "typeHierarchyVisible && typeHierarchyDirection == 'subtypes'"
   },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inlineEditIsVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionHasIndentationLessThanTabSize && inlineSuggestionVisible && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible || inlineEditIsVisible && inlineSuggestionVisible && tabShouldAcceptInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.commit",
+    "when": "inInlineEditsPreviewEditor"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.action.inlineSuggest.jump",
+    "when": "inlineEditIsVisible && tabShouldJumpToInlineEdit && !editorHoverFocused && !editorTabMovesFocus && !suggestWidgetVisible"
+  },
+  {
+    "key": "tab",
+    "command": "-editor.emmet.action.expandAbbreviation",
+    "when": "config.emmet.triggerExpansionOnTab && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-acceptSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-insertBestCompletion",
+    "when": "atEndOfWord && textInputFocus && !hasOtherSuggestions && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  },
+  {
+    "key": "tab",
+    "command": "-insertNextSuggestion",
+    "when": "hasOtherSuggestions && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  },
+  {
+    "key": "tab",
+    "command": "-insertSnippet",
+    "when": "editorTextFocus && hasSnippetCompletions && !editorTabMovesFocus && !inSnippetMode"
+  },
+  {
+    "key": "tab",
+    "command": "-jumpToNextSnippetPlaceholder",
+    "when": "hasNextTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "tab",
+    "command": "-workbench.action.terminal.acceptSelectedSuggestion",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen && terminalSuggestWidgetVisible || terminalFocus && terminalIsOpen && terminalProcessSupported && terminalSuggestWidgetVisible"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-acceptAlternativeSelectedSuggestion",
+    "when": "suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-insertPrevSuggestion",
+    "when": "hasOtherSuggestions && textInputFocus && !inSnippetMode && !suggestWidgetVisible && config.editor.tabCompletion == 'on'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-extension.vim_shift+tab",
+    "when": "editorTextFocus && vim.active && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "shift+tab",
+    "command": "-jumpToPrevSnippetPlaceholder",
+    "when": "hasPrevTabstop && inSnippetMode && textInputFocus"
+  },
+  {
+    "key": "alt+h",
+    "command": "-testing.toggleTestingPeekHistory",
+    "when": "testing.isPeekVisible"
+  },
+  {
+    "key": "alt+h",
+    "command": "-editor.action.accessibilityHelpOpenHelpLink",
+    "when": "accessibilityHelpIsShown"
+  },
+  {
+    "key": "alt+k",
+    "command": "-editor.action.accessibilityHelpConfigureKeybindings",
+    "when": "accessibilityHelpIsShown && accessibleViewHasUnassignedKeybindings"
+  },
+  {
+    "key": "ctrl+shift+alt+j",
+    "command": "-notebook.cell.joinAbove",
+    "when": "notebookEditorFocused"
+  },
+  {
+    "key": "alt+z",
+    "command": "-editor.action.toggleWordWrap"
+  },
+  {
+    "key": "alt+z",
+    "command": "-workbench.action.terminal.sizeToContentWidth",
+    "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported"
+  }
 ]
