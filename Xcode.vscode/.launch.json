@@ -1,0 +1,39 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Build & Run & Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
+            "iosBundleId": "${xcodeBundleId}",
+            "iosTarget": "last-selected",
+            "preLaunchTask": "${defaultBuildTask}"
+        },
+        {
+            "name": "Run & Launch",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
+            "iosBundleId": "${xcodeBundleId}",
+            "iosTarget": "last-selected"
+        },
+        {
+            "name": "Launch without Installing",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
+            "iosBundleId": "${xcodeBundleId}",
+            "iosTarget": "last-selected",
+            "iosInstallApp": false
+        },
+        {
+            "name": "Attach",
+            "type": "lldb",
+            "request": "attach",
+            "program": "${#xcodeBuildRoot}/Build/Products/Debug-${command:ios-debug.targetSdk}/${#xcodeTarget}.app",
+            "iosBundleId": "${xcodeBundleId}",
+            "iosTarget": "last-selected"
+        }
+    ]
+}

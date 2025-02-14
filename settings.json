@@ -1,0 +1,603 @@
+{
+  //---------- Custom ----------//
+  "terminal.external.osxExec": "kitty.app",
+  //---------- Editor ----------//
+  "editor.fontFamily": "FiraMono Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontSize": 13,
+  "editor.cursorSurroundingLines": 10,
+  "editor.cursorSurroundingLinesStyle": "all",
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "trailing",
+  "editor.smoothScrolling": true,
+  "editor.wordWrap": "on",
+  "editor.lineNumbers": "relative",
+  "editor.stickyScroll.enabled": false,
+  //---------- Vim ----------//
+  // 禁用leader键，所有space开头的快捷键必须交给vscode处理
+  // "vim.leader": " ",
+  "vim.useSystemClipboard": true,
+  "vim.enableNeovim": false,
+  "vim.smartRelativeLine": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.handleKeys": {},
+  "vim.insertModeKeyBindings": [],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<C-d>"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<C-u>"
+      ]
+    },
+    {
+      "before": [
+        "<C-S-j>"
+      ],
+      "after": [
+        "G"
+      ]
+    },
+    {
+      "before": [
+        "<C-S-k>"
+      ],
+      "after": [
+        "g",
+        "g"
+      ]
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "3",
+        "h"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ],
+      "after": [
+        "3",
+        "l"
+      ]
+    },
+    {
+      "before": [
+        "W"
+      ],
+      "after": [
+        "3",
+        "w"
+      ]
+    },
+    {
+      "before": [
+        "E"
+      ],
+      "after": [
+        "3",
+        "e"
+      ]
+    },
+    {
+      "before": [
+        "B"
+      ],
+      "after": [
+        "3",
+        "b"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.splitEditorLeft"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "j"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "k"
+      ],
+      "commands": [
+        "workbench.action.splitEditorUp"
+      ]
+    },
+    {
+      "before": [
+        "z",
+        "l"
+      ],
+      "commands": [
+        "workbench.action.splitEditorRight"
+      ]
+    },
+    {
+      "before": [
+        "<up>"
+      ],
+      "commands": [
+        "workbench.action.increaseViewSize"
+      ]
+    },
+    {
+      "before": [
+        "<down>"
+      ],
+      "commands": [
+        "workbench.action.decreaseViewSize"
+      ]
+    },
+    {
+      "before": [
+        "<left>"
+      ],
+      "commands": [
+        "workbench.action.decreaseViewWidth"
+      ]
+    },
+    {
+      "before": [
+        "<right>"
+      ],
+      "commands": [
+        "wrkbench.action.increaseViewWidth"
+      ]
+    },
+    {
+      "before": [
+        "q",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeOtherEditors"
+      ]
+    },
+    {
+      "before": [
+        "t",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.files.newUntitledFile"
+      ]
+    },
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "after": [
+        ":"
+      ]
+    },
+    {
+      "before": [
+        "S"
+      ],
+      "commands": [
+        ":w"
+      ]
+    },
+    {
+      "before": [
+        "Q"
+      ],
+      "commands": [
+        ":q"
+      ]
+    },
+    {
+      "before": [
+        "`"
+      ],
+      "after": [
+        "~"
+      ]
+    },
+    {
+      "before": [
+        "'"
+      ],
+      "after": [
+        "%"
+      ]
+    },
+    {
+      "before": [
+        ","
+      ],
+      "after": [
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "."
+      ],
+      "after": [
+        "$"
+      ]
+    },
+    {
+      "before": [
+        "v",
+        "'"
+      ],
+      "after": [
+        "v",
+        "%"
+      ]
+    },
+    {
+      "before": [
+        "d",
+        "'"
+      ],
+      "after": [
+        "d",
+        "%"
+      ]
+    },
+    {
+      "before": [
+        "c",
+        "'"
+      ],
+      "after": [
+        "c",
+        "%"
+      ]
+    },
+    {
+      "before": [
+        "v",
+        ","
+      ],
+      "after": [
+        "v",
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "d",
+        ","
+      ],
+      "after": [
+        "d",
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "c",
+        ","
+      ],
+      "after": [
+        "c",
+        "0"
+      ]
+    },
+    {
+      "before": [
+        "v",
+        "."
+      ],
+      "after": [
+        "v",
+        "$",
+        "h"
+      ]
+    },
+    {
+      "before": [
+        "d",
+        "."
+      ],
+      "after": [
+        "v",
+        "$",
+        "h",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "c",
+        "."
+      ],
+      "after": [
+        "c",
+        "$"
+      ]
+    },
+    {
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "\"",
+        "+",
+        "y",
+        "$"
+      ]
+    },
+    {
+      "before": [
+        "U"
+      ],
+      "after": [
+        "<C-r>"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "j"
+      ],
+      "commands": [
+        "editor.action.revealDeclaration"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "i"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "o"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "h"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "a"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "references-view.find"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "R"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "t"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "T"
+      ],
+      "commands": [
+        "workbench.actions.view.problems"
+      ]
+    },
+    {
+      "before": [
+        "<C-c>"
+      ],
+      "commands": [
+        ":nohl"
+      ],
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "J"
+      ],
+      "after": [
+        "5",
+        "j"
+      ]
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "after": [
+        "5",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<C-d>"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<C-u>"
+      ]
+    },
+    {
+      "before": [
+        "<C-S-j>"
+      ],
+      "after": [
+        "G"
+      ]
+    },
+    {
+      "before": [
+        "<C-S-k>"
+      ],
+      "after": [
+        "g",
+        "g"
+      ]
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "after": [
+        "3",
+        "h"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ],
+      "after": [
+        "3",
+        "l"
+      ]
+    },
+    {
+      "before": [
+        "W"
+      ],
+      "after": [
+        "3",
+        "w"
+      ]
+    },
+    {
+      "before": [
+        "E"
+      ],
+      "after": [
+        "3",
+        "e"
+      ]
+    },
+    {
+      "before": [
+        "B"
+      ],
+      "after": [
+        "3",
+        "b"
+      ]
+    },
+  ],
+  //---------- Dart & Flutter ----------//
+  "dart.flutterSdkPath": "~/fvm/default",
+  "dart.lineLength": 100,
+  "dart.warnWhenEditingFilesOutsideWorkspace": false,
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
+  "dart.openDevTools": "flutter",
+  "dart.flutterCreateOrganization": null,
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
+  "lldb.launch.expressions": "native",
+  //---------- End ----------//
+  //---------- System Add ----------//
+}
