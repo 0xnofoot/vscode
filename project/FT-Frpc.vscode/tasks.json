@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "type": "process",
+            "command": "make",
+            "args": [
+                "build",
+            ], // 这里可以根据你的 Makefile 指令设置
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$go"
+            ],
+            "detail": "Generated task by Makefile"
+        }
+    ]
+}

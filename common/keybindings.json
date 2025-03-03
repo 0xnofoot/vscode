@@ -269,13 +269,13 @@
   },
   {
     "key": "cmd+r",
-    "command": "workbench.action.debug.run",
-    "when": "!inDebugMode"
+    "command": "workbench.action.debug.restart",
+    "when": "editorTextFocus"
   },
   {
     "key": "cmd+shift+r",
-    "command": "workbench.action.debug.start",
-    "when": "!inDebugMode"
+    "command": "workbench.action.debug.run",
+    "when": "editorTextFocus"
   },
   //---------- 书签 ----------//
   {

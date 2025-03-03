@@ -30,6 +30,8 @@
   "editor.suggest.showStatusBar": true,
   "editor.suggest.snippetsPreventQuickSuggestions": true,
   "editor.suggestSelection": "recentlyUsed",
+  //---------- Debug ----------//
+  "debug.toolBarLocation": "floating",
   //---------- Indent ----------//
   "indentRainbow.indicatorStyle": "light",
   "indentRainbow.lightIndicatorStyleLineWidth": 1,
@@ -42,6 +44,8 @@
   //---------- Git ----------//
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
+  //---------- Clipboard-Manager ----------//
+  "clipboard-manager.snippet.enabled": false,
   //---------- Vim ----------//
   "vim.leader": "<space>",
   "vim.easymotion": true,
@@ -726,14 +730,26 @@
   //---------- Flutter & Dart ----------//
   "dart.lineLength": 100,
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
-  "dart.debugExternalPackageLibraries": true,
-  "dart.debugSdkLibraries": true,
+  "dart.debugExternalPackageLibraries": false,
+  "dart.debugSdkLibraries": false,
   "dart.openDevTools": "flutter",
   "dart.flutterCreateOrganization": null,
+  //---------- Python ----------//
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  //---------- Go ----------//
+  "[go]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "never" // 关键设置
+    },
+    "editor.formatOnSave": false // 双重保障
+  },
+  "go.toolsManagement.autoUpdate": false, // 禁止自动更新工具
   //---------- Swift ----------//
   "[swift]": {
     "editor.defaultFormatter": "vknabel.vscode-swiftformat",
-    "editor.inlayHints.enabled": "offUnlessPressed"
+    "editor.inlayHints.enabled": "offUnlessPressed",
   },
   "swiftlint.enable": false,
   "swiftlint.onlyEnableWithConfig": true,
@@ -745,14 +761,20 @@
     "~/.config/vscode/language/swift/swiftformat.config",
     ".swiftformat"
   ],
+  //---------- Objective-C ----------//
   "[objective-c]": {
     "editor.defaultFormatter": "nofoot.clang-format-support-style-variable",
     "editor.inlayHints.enabled": "offUnlessPressed",
   },
-  //---------- Objective-C ----------//
   "clang-format.language.objective-c.style": "file:${env.HOME}/.config/vscode/language/objective-c/clang-format.config",
   //---------- LLDB ----------//
   "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
   "lldb.launch.expressions": "native",
+  "python.condaPath": "/Users/toofonwang/micromamba/condabin/conda",
+  //---------- LeetCode ----------//
+  "leetcode.endpoint": "leetcode-cn",
+  "leetcode.workspaceFolder": "~/.leetcode",
+  "leetcode.hint.commandShortcut": false,
+  "leetcode.hint.configWebviewMarkdown": false,
   //---------- End ----------//
 }
