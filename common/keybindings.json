@@ -226,7 +226,7 @@
   },
   {
     "key": "alt+z",
-    "command": "workbench.action.focusPanel",
+    "command": "workbench.action.focusPanel"
   },
   {
     "key": "alt+shift+q",
@@ -251,7 +251,7 @@
   //---------- 搜索与指令 ----------//
   {
     "key": "ctrl+f",
-    "command": "workbench.action.showAllSymbols"
+    "command": "workbench.action.quickTextSearch"
   },
   {
     "key": "ctrl+shift+f",
@@ -269,13 +269,18 @@
   },
   {
     "key": "cmd+r",
-    "command": "workbench.action.debug.restart",
-    "when": "editorTextFocus"
+    "command": "workbench.action.debug.restart"
+    // "when": "editorTextFocus"
   },
   {
     "key": "cmd+shift+r",
-    "command": "workbench.action.debug.run",
-    "when": "editorTextFocus"
+    "command": "workbench.action.debug.run"
+    // "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+d",
+    "command": "workbench.action.debug.stop"
+    // "when": "editorTextFocus"
   },
   //---------- 书签 ----------//
   {
@@ -306,8 +311,12 @@
   },
   //---------- 侧边栏 ----------//
   {
+    "key": "cmd+e",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  {
     "key": "alt+w",
-    "command": "workbench.action.focusSideBar",
+    "command": "workbench.action.focusSideBar"
   },
   {
     "key": "alt+shift+q",
@@ -317,31 +326,31 @@
   {
     "key": "escape",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
   },
   {
     "key": "shift+j",
     "command": "list.focusDown",
     "args": 5,
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
   },
   {
     "key": "shift+k",
     "command": "list.focusUp",
     "args": 5,
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
   },
   {
     "key": "ctrl+j",
     "command": "list.focusDown",
     "args": 20,
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
   },
   {
     "key": "ctrl+k",
     "command": "list.focusUp",
     "args": 20,
-    "when": "sideBarFocus && !inputFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
   },
   //---------- 侧边资源管理器 ----------//
   {
@@ -412,6 +421,11 @@
   {
     "key": "t",
     "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "m",
+    "command": "explorer.newFolder",
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
@@ -662,5 +676,56 @@
     "key": "alt+z",
     "command": "-workbench.action.terminal.sizeToContentWidth",
     "when": "terminalFocus && terminalHasBeenCreated && terminalIsOpen || terminalFocus && terminalIsOpen && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+o",
+    "command": "-lineBreakInsert",
+    "when": "textInputFocus && !editorReadonly"
+  },
+  //---------- 代码编写 ----------//
+  {
+    "key": "ctrl+alt+a",
+    "command": "settings.cycle",
+    "args": {
+      "id": "toggleInlayHints",
+      "values": [
+        {
+          "python.analysis.inlayHints.callArgumentNames": "all",
+          "python.analysis.inlayHints.pytestParameters": true,
+          "python.analysis.inlayHints.functionReturnTypes": true,
+          "python.analysis.inlayHints.variableTypes": true
+        },
+        {
+          "python.analysis.inlayHints.callArgumentNames": "off",
+          "python.analysis.inlayHints.pytestParameters": false,
+          "python.analysis.inlayHints.functionReturnTypes": false,
+          "python.analysis.inlayHints.variableTypes": false
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "cmd+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+  },
+  {
+    "key": "alt+cmd+b",
+    "command": "-workbench.action.toggleAuxiliaryBar"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.view.backgroundAgent",
+    "when": "viewContainer.workbench.view.backgroundAgent.enabled"
+  },
+  {
+    "key": "shift+cmd+b",
+    "command": "-workbench.action.tasks.build",
+    "when": "taskCommandsRegistered"
+  },
+  {
+    "key": "cmd+r cmd+b",
+    "command": "-editor.action.setSelectionAnchor",
+    "when": "editorTextFocus"
   }
 ]
