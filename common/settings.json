@@ -1,5 +1,5 @@
 {
-  //---------- Cursor ----------//
+  //---------- Cursor AI ----------//
   "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
   //---------- Custom ----------//
   "terminal.external.osxExec": "kitty.app",
