@@ -1,6 +1,7 @@
 {
   //---------- Cursor AI ----------//
   "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
+  "cursor.composer.shouldAutoAcceptDiffs": false,
   //---------- Custom ----------//
   "terminal.external.osxExec": "kitty.app",
   "files.autoGuessEncoding": true,
