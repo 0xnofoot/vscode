@@ -349,25 +349,25 @@
     "key": "shift+j",
     "command": "list.focusDown",
     "args": 5,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   {
     "key": "shift+k",
     "command": "list.focusUp",
     "args": 5,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   {
     "key": "ctrl+j",
     "command": "list.focusDown",
     "args": 20,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   {
     "key": "ctrl+k",
     "command": "list.focusUp",
     "args": 20,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   //---------- 侧边资源管理器 ----------//
   {

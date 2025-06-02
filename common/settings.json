@@ -58,6 +58,7 @@
   "notebook.output.textLineLimit": 50,
   //---------- Databse Client ----------//
   "database-client.telemetry.usesOnlineServices": false,
+  "database-client.autoSync": true,
   //---------- Flutter & Dart ----------//
   "dart.lineLength": 200,
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
@@ -498,6 +499,5 @@
       "commands": ["editor.action.smartSelect.shrink"]
     }
   ],
-  "database-client.autoSync": true
   //---------- End ----------//
 }
