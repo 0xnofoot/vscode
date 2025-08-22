@@ -50,6 +50,10 @@
   //---------- Git ----------//
   "gitlens.currentLine.enabled": false,
   "gitlens.codeLens.enabled": false,
+  "git.openRepositoryInParentFolders": "never",
+  "git.blame.editorDecoration.enabled": false,
+  "git.blame.statusBarItem.enabled": false,
+  "gitlens.views.commitDetails.files.layout": "list",
   //---------- Clipboard-Manager ----------//
   "clipboard-manager.snippet.enabled": false,
   //---------- NoteBook ----------//
@@ -58,11 +62,12 @@
   "notebook.output.textLineLimit": 50,
   //---------- Databse Client ----------//
   "database-client.telemetry.usesOnlineServices": false,
+  "database-client.autoSync": true,
   //---------- Flutter & Dart ----------//
   "dart.lineLength": 200,
   "dart.warnWhenEditingFilesOutsideWorkspace": false,
-  "dart.debugExternalPackageLibraries": false,
-  "dart.debugSdkLibraries": false,
+  "dart.debugExternalPackageLibraries": true,
+  "dart.debugSdkLibraries": true,
   "dart.openDevTools": "flutter",
   "dart.flutterCreateOrganization": null,
   "dart.devToolsLocation": {
@@ -153,8 +158,7 @@
     "typescriptreact"
   ],
   //---------- LLDB ----------//
-  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB",
-  "lldb.launch.expressions": "native",
+  "lldb.library": "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/LLDB",
   //---------- LeetCode ----------//
   "leetcode.endpoint": "leetcode-cn",
   "leetcode.hint.commandShortcut": false,
@@ -162,7 +166,8 @@
   "leetcode.workspaceFolder": "/Users/nofoot/.leetcode",
   //---------- Copilot ----------//
   "github.copilot.enable": {
-    "*": true
+    // 禁用 Copliot
+    "*": false
   },
   //---------- Vim ----------//
   "vim.leader": "<space>",
@@ -497,7 +502,6 @@
       "before": ["<backspace>"],
       "commands": ["editor.action.smartSelect.shrink"]
     }
-  ],
-  "database-client.autoSync": true
+  ]
   //---------- End ----------//
 }

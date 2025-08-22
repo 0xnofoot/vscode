@@ -1,4 +1,3 @@
-// 将键绑定放在此文件中以覆盖默认值
 [
   //---------- Cussor AI ----------//
   {
@@ -349,25 +348,25 @@
     "key": "shift+j",
     "command": "list.focusDown",
     "args": 5,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   {
     "key": "shift+k",
     "command": "list.focusUp",
     "args": 5,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   {
     "key": "ctrl+j",
     "command": "list.focusDown",
     "args": 20,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   {
     "key": "ctrl+k",
     "command": "list.focusUp",
     "args": 20,
-    "when": "sideBarFocus && !inputFocus || explorerViewletFocus"
+    "when": "sideBarFocus && !inputFocus || explorerViewletFocus && !inputFocus"
   },
   //---------- 侧边资源管理器 ----------//
   {
@@ -474,6 +473,29 @@
     "key": "/",
     "command": "list.find",
     "when": "filesExplorerFocus && !inputFocus"
+  },
+  //---------- 代码编写 ----------//
+  {
+    "key": "ctrl+alt+a",
+    "command": "settings.cycle",
+    "args": {
+      "id": "toggleInlayHints",
+      "values": [
+        {
+          "python.analysis.inlayHints.callArgumentNames": "all",
+          "python.analysis.inlayHints.pytestParameters": true,
+          "python.analysis.inlayHints.functionReturnTypes": true,
+          "python.analysis.inlayHints.variableTypes": true
+        },
+        {
+          "python.analysis.inlayHints.callArgumentNames": "off",
+          "python.analysis.inlayHints.pytestParameters": false,
+          "python.analysis.inlayHints.functionReturnTypes": false,
+          "python.analysis.inlayHints.variableTypes": false
+        }
+      ]
+    },
+    "when": "editorTextFocus"
   },
   //---------- End ----------//
   //---------- System Ban ----------//
@@ -699,29 +721,6 @@
     "command": "-lineBreakInsert",
     "when": "textInputFocus && !editorReadonly"
   },
-  //---------- 代码编写 ----------//
-  {
-    "key": "ctrl+alt+a",
-    "command": "settings.cycle",
-    "args": {
-      "id": "toggleInlayHints",
-      "values": [
-        {
-          "python.analysis.inlayHints.callArgumentNames": "all",
-          "python.analysis.inlayHints.pytestParameters": true,
-          "python.analysis.inlayHints.functionReturnTypes": true,
-          "python.analysis.inlayHints.variableTypes": true
-        },
-        {
-          "python.analysis.inlayHints.callArgumentNames": "off",
-          "python.analysis.inlayHints.pytestParameters": false,
-          "python.analysis.inlayHints.functionReturnTypes": false,
-          "python.analysis.inlayHints.variableTypes": false
-        }
-      ]
-    },
-    "when": "editorTextFocus"
-  },
   {
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
@@ -758,5 +757,5 @@
     "key": "tab",
     "command": "-editor.action.acceptGPT4",
     "when": "hasGPT4Diff"
-  }
+  },
 ]
