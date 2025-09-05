@@ -1,3 +1,4 @@
+// 将键绑定放在此文件中以覆盖默认值
 [
   //---------- Cussor AI ----------//
   {
@@ -168,12 +169,12 @@
   {
     "key": "alt+h",
     "command": "workbench.action.focusLeftGroup",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus || terminalFocus"
   },
   {
     "key": "alt+l",
     "command": "workbench.action.focusRightGroup",
-    "when": "editorTextFocus"
+    "when": "editorTextFocus || terminalFocus"
   },
   {
     "key": "alt+shift+j",
@@ -263,6 +264,11 @@
     "key": "alt+shift+q",
     "command": "workbench.action.closeAuxiliaryBar",
     "when": "auxiliaryBarFocus"
+  },
+  {
+    "key": "ctrl+alt+q",
+    "command": "workbench.action.closeOtherEditors",
+    "when": "editorTextFocus"
   },
   //---------- 搜索与指令 ----------//
   {
@@ -473,29 +479,6 @@
     "key": "/",
     "command": "list.find",
     "when": "filesExplorerFocus && !inputFocus"
-  },
-  //---------- 代码编写 ----------//
-  {
-    "key": "ctrl+alt+a",
-    "command": "settings.cycle",
-    "args": {
-      "id": "toggleInlayHints",
-      "values": [
-        {
-          "python.analysis.inlayHints.callArgumentNames": "all",
-          "python.analysis.inlayHints.pytestParameters": true,
-          "python.analysis.inlayHints.functionReturnTypes": true,
-          "python.analysis.inlayHints.variableTypes": true
-        },
-        {
-          "python.analysis.inlayHints.callArgumentNames": "off",
-          "python.analysis.inlayHints.pytestParameters": false,
-          "python.analysis.inlayHints.functionReturnTypes": false,
-          "python.analysis.inlayHints.variableTypes": false
-        }
-      ]
-    },
-    "when": "editorTextFocus"
   },
   //---------- End ----------//
   //---------- System Ban ----------//
@@ -721,6 +704,29 @@
     "command": "-lineBreakInsert",
     "when": "textInputFocus && !editorReadonly"
   },
+  //---------- 代码编写 ----------//
+  {
+    "key": "ctrl+alt+a",
+    "command": "settings.cycle",
+    "args": {
+      "id": "toggleInlayHints",
+      "values": [
+        {
+          "python.analysis.inlayHints.callArgumentNames": "all",
+          "python.analysis.inlayHints.pytestParameters": true,
+          "python.analysis.inlayHints.functionReturnTypes": true,
+          "python.analysis.inlayHints.variableTypes": true
+        },
+        {
+          "python.analysis.inlayHints.callArgumentNames": "off",
+          "python.analysis.inlayHints.pytestParameters": false,
+          "python.analysis.inlayHints.functionReturnTypes": false,
+          "python.analysis.inlayHints.variableTypes": false
+        }
+      ]
+    },
+    "when": "editorTextFocus"
+  },
   {
     "key": "cmd+b",
     "command": "-workbench.action.toggleSidebarVisibility"
@@ -758,4 +764,8 @@
     "command": "-editor.action.acceptGPT4",
     "when": "hasGPT4Diff"
   },
+  {
+    "key": "cmd+e",
+    "command": "composerMode.background"
+  }
 ]
