@@ -2,12 +2,16 @@
   //---------- Cursor AI ----------//
   "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
   "cursor.composer.shouldAutoAcceptDiffs": false,
+  "cursorpyright.analysis.typeCheckingMode": "standard",
+  "cursorpyright.analysis.inlayHints.callArgumentNames": false,
+  "cursorpyright.analysis.inlayHints.functionReturnTypes": false,
+  "cursorpyright.analysis.inlayHints.variableTypes": false,
   //---------- Custom ----------//
   "terminal.external.osxExec": "kitty.app",
   "files.autoGuessEncoding": true,
   "explorer.confirmDragAndDrop": false,
   "explorer.confirmDelete": false,
-  "search.useIgnoreFiles": false,
+  "search.useIgnoreFiles": true,
   //---------- Workbench ----------//
   "workbench.colorTheme": "Syntax Material Dark",
   "workbench.iconTheme": "material-icon-theme",
@@ -77,11 +81,11 @@
   "[python]": {
     "editor.defaultFormatter": "charliermarsh.ruff"
   },
-  "python.languageServer": "Default",
+  "python.languageServer": "None",
   "python.analysis.typeCheckingMode": "standard",
   "python.analysis.completeFunctionParens": true,
-  "python.analysis.inlayHints.callArgumentNames": "off",
   "python.analysis.inlayHints.pytestParameters": false,
+  "python.analysis.inlayHints.callArgumentNames": "off",
   "python.analysis.inlayHints.functionReturnTypes": false,
   "python.analysis.inlayHints.variableTypes": false,
   //---------- Golang ----------//
@@ -502,6 +506,6 @@
       "before": ["<backspace>"],
       "commands": ["editor.action.smartSelect.shrink"]
     }
-  ]
+  ],
   //---------- End ----------//
 }

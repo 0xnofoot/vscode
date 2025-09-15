@@ -712,16 +712,24 @@
       "id": "toggleInlayHints",
       "values": [
         {
-          "python.analysis.inlayHints.callArgumentNames": "all",
           "python.analysis.inlayHints.pytestParameters": true,
+          "python.analysis.inlayHints.callArgumentNames": "all",
           "python.analysis.inlayHints.functionReturnTypes": true,
-          "python.analysis.inlayHints.variableTypes": true
+          "python.analysis.inlayHints.variableTypes": true,
+
+          "cursorpyright.analysis.inlayHints.callArgumentNames": true,
+          "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+          "cursorpyright.analysis.inlayHints.variableTypes": true
         },
         {
-          "python.analysis.inlayHints.callArgumentNames": "off",
           "python.analysis.inlayHints.pytestParameters": false,
+          "python.analysis.inlayHints.callArgumentNames": "off",
           "python.analysis.inlayHints.functionReturnTypes": false,
-          "python.analysis.inlayHints.variableTypes": false
+          "python.analysis.inlayHints.variableTypes": false,
+
+          "cursorpyright.analysis.inlayHints.callArgumentNames": false,
+          "cursorpyright.analysis.inlayHints.functionReturnTypes": false,
+          "cursorpyright.analysis.inlayHints.variableTypes": false
         }
       ]
     },
