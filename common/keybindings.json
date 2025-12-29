@@ -771,9 +771,5 @@
     "key": "tab",
     "command": "-editor.action.acceptGPT4",
     "when": "hasGPT4Diff"
-  },
-  {
-    "key": "cmd+e",
-    "command": "composerMode.background"
   }
 ]

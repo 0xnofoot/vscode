@@ -57,7 +57,7 @@
   "git.openRepositoryInParentFolders": "never",
   "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": false,
-  "gitlens.views.commitDetails.files.layout": "list",
+  "gitlens.views.commitDetails.files.layout": "tree",
   //---------- Clipboard-Manager ----------//
   "clipboard-manager.snippet.enabled": false,
   //---------- NoteBook ----------//
@@ -96,6 +96,9 @@
     "editor.formatOnSave": false // 双重保障
   },
   "go.toolsManagement.autoUpdate": false, // 禁止自动更新工具
+  //---------- Kotlin ----------//
+  "kotlin.languageServer.enabled": false,
+  "kotlin.debugAdapter.enabled": false,
   //---------- Swift ----------//
   "[swift]": {
     "editor.defaultFormatter": "vknabel.vscode-swiftformat",
@@ -151,6 +154,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.tabSize": 2
   },
+  //---------- MarkDown ----------//
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": false
+  },
   //---------- Clang-Format ----------//
   "clang-format.language.objective-c.style": "file:${env.HOME}/.config/vscode/language/objective-c/clang-format.config",
   //---------- ESLint ----------//
@@ -172,6 +179,20 @@
   "github.copilot.enable": {
     // 禁用 Copliot
     "*": false
+  },
+  //---------- Claude Code ----------//
+  "claudeCode.preferredLocation": "panel",
+  //---------- Docker ----------//
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   },
   //---------- Vim ----------//
   "vim.leader": "<space>",
@@ -281,8 +302,16 @@
       "commands": ["wrkbench.action.increaseViewWidth"]
     },
     {
-      "before": ["q", "q"],
+      "before": ["leader", "q", "q"],
       "commands": ["workbench.action.closeOtherEditors"]
+    },
+    {
+      "before": ["leader", "q", "r"],
+      "commands": ["workbench.action.closeEditorsToTheRight"]
+    },
+    {
+      "before": ["leader", "q", "l"],
+      "commands": ["workbench.action.closeEditorsToTheLeft"]
     },
     {
       "before": ["t", "t"],
@@ -291,7 +320,7 @@
     // 搜索
     {
       "before": ["leader", "f"],
-      "commands": ["leap.find"]
+      "commands": ["workbench.view.search.focus"]
     },
     {
       "before": ["leader", "e", "f"],
