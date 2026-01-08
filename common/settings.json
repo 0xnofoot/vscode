@@ -3,9 +3,9 @@
   "cursor.cpp.disabledLanguages": ["plaintext", "markdown", "scminput"],
   "cursor.composer.shouldAutoAcceptDiffs": false,
   "cursorpyright.analysis.typeCheckingMode": "standard",
-  "cursorpyright.analysis.inlayHints.callArgumentNames": false,
-  "cursorpyright.analysis.inlayHints.functionReturnTypes": false,
-  "cursorpyright.analysis.inlayHints.variableTypes": false,
+  "cursorpyright.analysis.inlayHints.callArgumentNames": true,
+  "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
+  "cursorpyright.analysis.inlayHints.variableTypes": true,
   //---------- Custom ----------//
   "terminal.external.osxExec": "kitty.app",
   "files.autoGuessEncoding": true,
@@ -97,8 +97,25 @@
   },
   "go.toolsManagement.autoUpdate": false, // 禁止自动更新工具
   //---------- Kotlin ----------//
-  "kotlin.languageServer.enabled": false,
-  "kotlin.debugAdapter.enabled": false,
+  "ktfmtter.ktfmtVersion": "0.53",
+  "ktfmtter.style": "kotlinlang",
+  "ktfmtter.java-runtime": "JavaSE-21",
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-17",
+      "path": "/Users/toofonwang/Library/Java/JavaVirtualMachines/ms-17.0.17/Contents/Home",
+      "default": true
+    },
+    {
+      "name": "JavaSE-21",
+      "path": "/Users/toofonwang/Library/Java/JavaVirtualMachines/ms-21.0.9/Contents/Home"
+    }
+  ],
+  "[kotlin]": {
+    "editor.defaultFormatter": "shape-app.ktfmtter",
+    // "editor.defaultFormatter": "JetBrains.kotlin",
+    "editor.inlayHints.enabled": "offUnlessPressed"
+  },
   //---------- Swift ----------//
   "[swift]": {
     "editor.defaultFormatter": "vknabel.vscode-swiftformat",
@@ -535,6 +552,6 @@
       "before": ["<backspace>"],
       "commands": ["editor.action.smartSelect.shrink"]
     }
-  ],
+  ]
   //---------- End ----------//
 }

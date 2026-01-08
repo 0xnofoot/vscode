@@ -720,6 +720,7 @@
           "cursorpyright.analysis.inlayHints.callArgumentNames": true,
           "cursorpyright.analysis.inlayHints.functionReturnTypes": true,
           "cursorpyright.analysis.inlayHints.variableTypes": true
+
         },
         {
           "python.analysis.inlayHints.pytestParameters": false,
